@@ -32,16 +32,16 @@ const apiImg = {
 
 };
 
-const randomImg = (apiImg) =>{
-  let keys = Object.keys(apiImg);
-  return apiImg[keys[ keys.length * Math.random() << 0]]
-};
+// const randomImg = (apiImg) =>{
+//   let keys = Object.keys(apiImg);
+//   return apiImg[keys[ keys.length * Math.random() << 0]]
+// };
 
-bot.onText(/^\/nostalgiapic/, (msg, randomImg) =>{
+bot.onText(/^\/nostalgiapic/, (msg) =>{
   const chatId = msg.chat.id;
   
   
-  bot.sendPhoto(chatId, randomImg);
+  bot.sendPhoto(chatId, './resources/img/2008-09-18-21-19-22.jpg');
 });
 
 // bot.onText(/^\/clean/, (msg) => {
