@@ -41,7 +41,10 @@ bot.onText(/^\/nostalgiapic/, (msg) =>{
   const chatId = msg.chat.id;
   
   
-  bot.sendPhoto(chatId, './resources/img/2008-09-18-21-19-22.jpg');
+  const photo = bot.sendPhoto(chatId, './resources/img/2008-09-18-21-19-22.jpg');
+  if(photo){
+    bot.sendMessage(chatId, 'eyuu');
+  }
 });
 
 // bot.onText(/^\/clean/, (msg) => {
@@ -54,4 +57,17 @@ bot.onText(/^\/nostalgiapic/, (msg) =>{
   
 //   bot.deleteMessage(chatId, messageId);
 // });
+
+bot.onText(/^\/ping/, function(msg){
+  var chatId = msg.chat.id;
+  var tipoChat = msg.chat.type;
+  
+  if (tipoChat == 'private'){
+      bot.sendMessage(chatId, "Pong!")
+  } 
+  
+  else if (tipoChat == 'supergroup') {
+      bot.sendMessage(chatId, "Este comando solo funciona en privado")
+  }
+});
 
