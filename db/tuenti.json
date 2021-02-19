@@ -3,11 +3,15 @@
     {
     "id": "2008-09-18 15-41-14",
     "photo": "./resources/img/2008-09-18-21-19-22.jpg",
+    "postedBy": "Rodri Campos Hellin",
+    "commentCount": 0,
     "comments": []
       },
       {
       "id": "2008-09-18 21-19-22",
       "photo": "./resources/img/2008-09-18 21-19-22.jpg",
+      "postedBy": "Rodri Campos Hellin",
+      "commentCount": 1,
       "comments": 
         [
           {
@@ -19,6 +23,8 @@
       {
       "id": "2008-11-19 21-45-14",
       "photo": "./resources/img/2008-11-19 21-45-14.jpg",
+      "postedBy": "Juanma Sanchez Molina",
+      "commentCount": 33,
       "comments": 
         [
           {
