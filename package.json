@@ -9,6 +9,7 @@
   "author": "adrian",
   "license": "ISC",
   "dependencies": {
-    "node-telegram-bot-api": "^0.51.0"
+    "node-telegram-bot-api": "^0.51.0",
+    "utf8": "^3.0.0"
   }
 }
