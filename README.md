@@ -23,5 +23,5 @@ Launch the project with:
 ```javascript
 node bot.js
 ```
-
+ 
 You can change "bot.js" in package.json
