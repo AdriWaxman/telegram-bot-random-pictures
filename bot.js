@@ -1,6 +1,6 @@
 
 const TelegramBot = require('node-telegram-bot-api');
-const token = '1548860141:AAGbr5Gioa-8xjcHo6dqFHGHfZDtZvyg8-g';
+const token = '1548860141:AAHAswxW-DrWDjCe61TOTb-DznFsyJfftxQ';
 const bot = new TelegramBot(token, {polling:true});
 // const fs = require('fs');
 const data = require('./db/data.json').data; 
@@ -54,6 +54,7 @@ bot.onText(/^\/travelvideomachine/, (msg) =>{
 
   bot.sendAnimation(chatId, gif);
 });
+
 
 
 
