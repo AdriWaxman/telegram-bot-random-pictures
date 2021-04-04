@@ -1,10 +1,20 @@
 
+const token = process.env.TOKEN;
+
 const TelegramBot = require('node-telegram-bot-api');
-const token = '1548860141:AAHAswxW-DrWDjCe61TOTb-DznFsyJfftxQ';
-const bot = new TelegramBot(token, {polling:true});
-// const fs = require('fs');
+let bot;
+
+if(process.env.NODE_ENV === 'production'){
+  bot = new TelegramBot(token);
+  bot.setWebHook(process.env.HEROKU_URL + bot.token);
+
+} else{
+  bot = new TelegramBot(token, {polling:true});
+}
+
 const data = require('./db/data.json').data; 
 
+console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 
 bot.on('polling_error', function(error){
     console.log(error);
@@ -56,5 +66,5 @@ bot.onText(/^\/travelvideomachine/, (msg) =>{
 });
 
 
-
+module.exports = bot;
 
