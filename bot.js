@@ -13,6 +13,7 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 const data = require('./db/data.json').data; 
+const poker = require('./db/poker.json').data;
 
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 
@@ -49,6 +50,17 @@ bot.onText(/^\/travelphotomachine/, (msg) =>{
  
   const photoText = text;
   bot.sendPhoto(chatId, photo, {caption: photoText, parse_mode:'HTML'});
+});
+
+
+bot.onText(/^\/travelpokermachine/, (msg) =>{
+  const chatId = msg.chat.id;
+  let RANDOM_ID = Math.floor(Math.random()*poker.length);
+  let randomImg = poker[RANDOM_ID].photo_id;
+
+  const photo = './resources/poler/' + randomImg;
+
+  bot.sendPhoto(chatId, photo);
 });
 
 bot.onText(/^\/travelaudiomachine/, (msg) =>{
